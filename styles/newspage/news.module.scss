@@ -1,0 +1,15 @@
+.newsHero {
+  height: 10vh;
+  background-color: rgb(88, 88, 252);
+  width: auto;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+
+.pageContainer {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-evenly;
+}

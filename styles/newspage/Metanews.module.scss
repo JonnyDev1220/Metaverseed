@@ -1,0 +1,40 @@
+.compContainer {
+  width: 70%;
+  h2 {
+    font-size: 35px;
+  }
+  .newsContainer {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 1em 1em;
+
+    .item-2 {
+      grid-area: 1 / 1 / 11 / 3;
+    }
+
+    .articleDiv {
+      width: auto;
+      padding: 0px 10px 0px 10px;
+
+      .articleTitle {
+        font-size: 20px;
+      }
+
+      .articleImg {
+        width: 100%;
+        height: 250px;
+        border-radius: 10px;
+      }
+      .articleDesc {
+        font-size: 12px;
+        text-align: justify;
+      }
+      .articleLink {
+        text-decoration: none;
+        color: rgb(118, 143, 255);
+      }
+    }
+  }
+}

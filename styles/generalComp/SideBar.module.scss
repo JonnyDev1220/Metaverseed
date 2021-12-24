@@ -1,0 +1,24 @@
+.sideBarContainer {
+  background-color: blue;
+  width: 30%;
+  height: 100%;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+
+  h2 {
+    font-size: 35px;
+  }
+
+  .tokenPriceBox {
+    width: 200px;
+    height: 200px;
+    background-color: rgb(63, 30, 30);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+}

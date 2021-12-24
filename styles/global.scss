@@ -1,0 +1,7 @@
+@import "mixins";
+@import "variables";
+
+body.dark-mode {
+  background-color: $bg-dark-mode;
+  color: $white-text;
+}

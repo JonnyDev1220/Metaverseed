@@ -1,0 +1,38 @@
+.compContainer {
+  width: 90%;
+  margin: auto;
+  .fullNewsBox {
+    width: 90%;
+    display: flex;
+    justify-content: space-evenly;
+    margin: auto;
+    overflow: hidden;
+    .newsBox {
+      width: 375px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      height: 200px;
+
+      .image {
+        position: absolute;
+        z-index: -1;
+        width: inherit;
+        height: 200px;
+      }
+      h2 {
+        margin: 0;
+        padding-left: 10px;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.719);
+      }
+      p {
+        margin: 0;
+        padding: 10px;
+        color: white;
+        font-size: 10px;
+        background-color: rgba(0, 0, 0, 0.719);
+      }
+    }
+  }
+}

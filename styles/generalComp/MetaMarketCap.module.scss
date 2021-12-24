@@ -1,0 +1,14 @@
+.title {
+  text-align: center;
+}
+
+.compContainer {
+  display: flex;
+  justify-content: space-evenly;
+
+  .statsBox {
+    text-align: center;
+    width: 200px;
+    height: 100px;
+  }
+}
