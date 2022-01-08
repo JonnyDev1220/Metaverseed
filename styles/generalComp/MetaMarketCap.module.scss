@@ -6,9 +6,21 @@
   display: flex;
   justify-content: space-evenly;
 
-  .statsBox {
-    text-align: center;
-    width: 200px;
-    height: 100px;
+  .fullStatsBox {
+    display: flex;
+    justify-content: space-between;
+    .statsBox {
+      text-align: center;
+      width: 200px;
+      height: 100px;
+      .label {
+        font-size: 17px;
+        font-weight: 700;
+      }
+      .number {
+        font-size: 17px;
+        font-weight: 500;
+      }
+    }
   }
 }

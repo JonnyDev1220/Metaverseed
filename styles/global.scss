@@ -1,6 +1,11 @@
 @import "mixins";
 @import "variables";
 
+body {
+  font-family: "Kanit", sans-serif;
+  letter-spacing: 0.3px;
+}
+
 body.dark-mode {
   background-color: $bg-dark-mode;
   color: $white-text;

@@ -2,23 +2,26 @@ import * as json from "./data.json";
 import { setDoc, doc } from "@firebase/firestore";
 import { db } from "../firebase/clientApp";
 
-let statsToPush = [];
-
-// // POST DATA into Metaverse Stats Collection
-const serveDatabaseWithDATA = async (data) => {
+// POST DATA into Metaverse Stats Collection
+const pushArrayToDatabase = async (data) => {
+  const obj = { ...data };
   //  Add a new document in collection "cities"
-  await setDoc(doc(db, "MetaverseStats", "Stats"), data);
+  await setDoc(doc(db, "MetaverseStats", "Stats"), obj);
 };
 
-export const firstMetaverseStatsArray = (array) => {
+// Create metaverse Array with name and slug
+export const firstMetaverseStatsArray = () => {
+  let array = [];
   let metaverseList = json;
 
   metaverseList.virtualworld.forEach((element) => {
     array.push({ name: element.node.name, slug: element.node.slug });
   });
+  return array;
 };
 
-export const pushMetaverseStats = async (array) => {
+// PUSH Stats From OPENSEA API to firstArray
+export const setNFTArray = async (array) => {
   array.forEach(async (element) => {
     const options = { method: "GET", headers: { Accept: "application/json" } };
     const res = await fetch(
@@ -28,9 +31,6 @@ export const pushMetaverseStats = async (array) => {
     const data = await res.json();
     element.stats = data;
   });
-  console.log(array);
-  serveDatabaseWithDATA(array);
-};
 
-firstMetaverseStatsArray(statsToPush);
-// pushMetaverseStats(statsToPush);
+  return array;
+};

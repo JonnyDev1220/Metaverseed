@@ -48,17 +48,25 @@ const MetaMarketCap = (data) => {
     <div>
       <h2 className={styles.title}>Metaverse Ecosystem Token</h2>
       <div className={styles.compContainer}>
-        <div className={styles.statsBox}>
-          <h3>Market Capitalizations</h3>
-          <div>{marketCap.toLocaleString(undefined, formatNumberObj)}</div>
-        </div>
-        <div className={styles.statsBox}>
-          <h3>24H volume</h3>
-          <div>{volume24h.toLocaleString(undefined, formatNumberObj)}</div>
-        </div>
-        <div className={styles.statsBox}>
-          <h3>24H change</h3>
-          <div style={styleObj}>{marketCapChange.toFixed(2)}%</div>
+        <div className={styles.fullStatsBox}>
+          <div className={styles.statsBox}>
+            <h3 className={styles.label}>Market Capitalizations</h3>
+            <div className={styles.number}>
+              {marketCap.toLocaleString(undefined, formatNumberObj)}
+            </div>
+          </div>
+          <div className={styles.statsBox}>
+            <h3 className={styles.label}>24H volume</h3>
+            <div className={styles.number}>
+              {volume24h.toLocaleString(undefined, formatNumberObj)}
+            </div>
+          </div>
+          <div className={styles.statsBox}>
+            <h3 className={styles.label}>24H change</h3>
+            <div className={styles.number} style={styleObj}>
+              {marketCapChange.toFixed(2)}%
+            </div>
+          </div>
         </div>
       </div>
     </div>

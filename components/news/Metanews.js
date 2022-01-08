@@ -1,10 +1,7 @@
 // Metaverse News Component
 import styles from "../../styles/newspage/Metanews.module.scss";
-import { useEffect } from "react";
 
 const Metanews = ({ newsArray }) => {
-  useEffect(() => {}, []);
-
   return (
     <div className={styles.compContainer}>
       <h1> Latest News</h1>
@@ -25,6 +22,7 @@ const Metanews = ({ newsArray }) => {
               >
                 Full articles ..
               </a>
+              <p>source: {article.source.name}</p>
             </div>
           );
         })}

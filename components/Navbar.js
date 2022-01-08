@@ -28,7 +28,7 @@ const Navbar = () => {
           </Link>
 
           <Link href="/portfolio">
-            <a className={styles.link}>Porfolio Tracker</a>
+            <a className={styles.link}>Ressources</a>
           </Link>
           <ThemeChanger />
         </div>

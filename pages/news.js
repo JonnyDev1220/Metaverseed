@@ -4,13 +4,16 @@ import Metanews from "../components/news/Metanews";
 import SideBar from "../components/SideBar";
 import getMetanews from "../database/getMetaverseNews";
 import { useState, useEffect } from "react";
+import { getMetaverseToken } from "../database/getMetaverseToken";
 
-const news = ({ metanews }) => {
+const news = ({ metanews, metaTokens }) => {
   const [newsArray, setnewsArray] = useState([]);
+  const [tokensArray, settokensArray] = useState([]);
 
   useEffect(() => {
     setnewsArray(metanews.articles);
-  }, [newsArray]);
+    settokensArray(metaTokens);
+  }, [newsArray, tokensArray]);
 
   return (
     <div>
@@ -20,7 +23,7 @@ const news = ({ metanews }) => {
       </div>
       <div className={styles.pageContainer}>
         <Metanews newsArray={newsArray} />
-        <SideBar />
+        <SideBar metaTokens={tokensArray} />
       </div>
     </div>
   );
@@ -30,10 +33,12 @@ export default news;
 
 export const getServerSideProps = async (context) => {
   const metanews = await getMetanews();
+  const metaTokens = await getMetaverseToken();
 
   return {
     props: {
       metanews: metanews,
+      metaTokens: metaTokens,
     },
   };
 };
