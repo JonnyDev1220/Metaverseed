@@ -7,11 +7,18 @@ import getMetanews from "../database/getMetaverseNews";
 import SideBar from "../components/SideBar";
 import { useState, useEffect } from "react";
 import { getMetaverseToken } from "../database/getMetaverseToken";
+import { getStock } from "../database/setStockStats";
 
-export default function Home({ marketcapStats, metanews, metaTokens }) {
+export default function Home({
+  marketcapStats,
+  metanews,
+  metaTokens,
+  metaStocks,
+}) {
   const [tokensArray, settokensArray] = useState([]);
 
   useEffect(() => {
+    console.log(metaStocks);
     settokensArray(metaTokens);
   }, [tokensArray]);
   return (
@@ -31,12 +38,14 @@ export const getServerSideProps = async () => {
   const marketcapStats = await res.json();
   const metanews = await getMetanews();
   const metaTokens = await getMetaverseToken();
+  const metaStocks = await getStock();
 
   return {
     props: {
       marketcapStats: marketcapStats,
       metanews: metanews,
       metaTokens: metaTokens,
+      metaStocks: metaStocks,
     },
   };
 };

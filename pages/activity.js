@@ -2,13 +2,30 @@ import Navbar from "../components/Navbar";
 import { useEffect, useState } from "react";
 import { getMetaverseToken } from "../database/getMetaverseToken";
 import styles from "../styles/activitypage/Activity.module.scss";
+import TokenActivity from "../components/activity/tokenActivity/TokenActivity";
+import TokenGrid from "../components/activity/tokenActivity/TokenGrid";
+import NFTActivity from "../components/activity/nftActivity/NFTActivity";
+import NFTGrid from "../components/activity/nftActivity/NFTGrid";
+import StockActivity from "../components/activity/stockActivity/StockActivity";
+import StockGrid from "../components/activity/stockActivity/StockGrid";
 
 const activity = ({ metaTokens }) => {
+  const [options, setoptions] = useState("Tokens");
   const [tokensArray, settokensArray] = useState([]);
+
+  const onTokenClick = () => {
+    setoptions("Tokens");
+  };
+
+  const onStockClick = () => {
+    setoptions("Stocks");
+  };
+  const onNFTClick = () => {
+    setoptions("NFTs");
+  };
 
   useEffect(() => {
     settokensArray(metaTokens);
-    console.log(tokensArray);
   }, [tokensArray]);
 
   return (
@@ -16,22 +33,18 @@ const activity = ({ metaTokens }) => {
       <Navbar />
       <div className={styles.pageContainer}>
         <h1>Metaverse market overview</h1>
-        <select>
-          <option value="" key="">
-            Category
-          </option>
-          <option value="Stock" key="token">
-            TOKENS
-          </option>
-          <option value="Stock" key="NFT">
-            NFTS
-          </option>
-          <option value="Stock" key="stock">
-            STOCKS
-          </option>
-        </select>
+        <button onClick={onTokenClick}>Tokens</button>
+        <button onClick={onNFTClick}>NFTs</button>
+        <button onClick={onStockClick}>Stocks</button>
 
-        {/* if value of the selected is xxx display xxx component */}
+        {options == "Tokens" ? <TokenActivity /> : null}
+        {options == "Tokens" ? <TokenGrid /> : null}
+
+        {options == "NFTs" ? <NFTActivity /> : null}
+        {options == "NFTs" ? <NFTGrid /> : null}
+
+        {options == "Stocks" ? <StockActivity /> : null}
+        {options == "Stocks" ? <StockGrid /> : null}
       </div>
     </div>
   );

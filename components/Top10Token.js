@@ -34,6 +34,7 @@ const Top10Token = ({ metaTokens }) => {
           }
         })}
       </div>
+      <button className={styles.moreBtn}>More Activity</button>
     </div>
   );
 };
