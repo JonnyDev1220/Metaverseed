@@ -1,4 +1,6 @@
 import styles from "../styles/generalComp/Top10Token.module.scss";
+import Link from "next/link";
+import { useEffect, useState } from "react";
 
 const Top10Token = ({ metaTokens }) => {
   metaTokens.sort((a, b) => {
@@ -34,7 +36,10 @@ const Top10Token = ({ metaTokens }) => {
           }
         })}
       </div>
-      <button className={styles.moreBtn}>More Activity</button>
+
+      <Link href="/market">
+        <button className={styles.moreBtn}>More ..</button>
+      </Link>
     </div>
   );
 };

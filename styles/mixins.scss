@@ -8,3 +8,70 @@
   max-width: 1200px;
   margin: auto;
 }
+
+@mixin backgoundColorAnimation() {
+  animation-name: backgroundColorPalette;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in;
+
+  @keyframes backgroundColorPalette {
+    0% {
+      background: rgb(170, 66, 255);
+    }
+    25% {
+      background: rgb(0, 204, 194);
+    }
+    50% {
+      background: #aaf683;
+    }
+    75% {
+      background: #ffd97d;
+    }
+    100% {
+      background: #ff9b85;
+    }
+  }
+}
+
+@mixin backgoundColorText() {
+  animation-name: backgroundColorPalette;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in;
+
+  @keyframes backgroundColorPalette {
+    0% {
+      background: rgb(170, 66, 255);
+
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    25% {
+      background: rgb(0, 204, 194);
+
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    50% {
+      background: #aaf683;
+
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    75% {
+      background: #ffd97d;
+
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    100% {
+      background: #ff9b85;
+
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+}

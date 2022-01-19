@@ -1,10 +1,10 @@
-$bg-dark-mode: #000;
+$bg-dark-mode: rgb(3, 3, 3);
 $grey-dark-mode: rgba(66, 66, 66, 0.712);
+$greyBlack: rgb(22, 22, 22);
 $white-text: #fff;
-$primary: rgb(170, 66, 255);
 
 $gradient: linear-gradient(
-  172deg,
+  360deg,
   rgba(170, 66, 255, 1) 0%,
   rgba(22, 250, 240, 1) 100%
 );

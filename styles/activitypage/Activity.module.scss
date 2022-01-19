@@ -1,12 +1,32 @@
+@import "../variables.scss";
+@import "../mixins.scss";
+
 .pageContainer {
   max-width: 1200px;
   margin: auto;
-  text-align: center;
-  select {
-    border: 3px solid white;
-    border-radius: 10px;
-    background-color: inherit;
-    color: white;
-    padding: 10px 15px;
+
+  h1 {
+    font-size: 72px;
+    text-align: center;
+  }
+
+  .btnDiv {
+    display: flex;
+    justify-content: center;
+    button {
+      font-family: inherit;
+      background: rgb(19, 19, 19);
+      padding: 15px 25px;
+      font-size: 18px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      color: inherit;
+
+      margin-right: 20px;
+    }
+    button:focus {
+      @include backgoundColorAnimation();
+    }
   }
 }

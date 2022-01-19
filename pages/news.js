@@ -19,7 +19,7 @@ const news = ({ metanews, metaTokens }) => {
     <div>
       <Navbar />
       <div className={styles.newsHero}>
-        <h1>Get Up to Date with the latest Metaverse News</h1>
+        <h1>Latest Metaverse News</h1>
       </div>
       <div className={styles.pageContainer}>
         <Metanews newsArray={newsArray} />

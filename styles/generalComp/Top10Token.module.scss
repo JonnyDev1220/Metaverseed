@@ -1,13 +1,13 @@
 @import "../variables.scss";
+@import "../mixins.scss";
+
 .top10Container {
-  text-align: center;
   width: 100%;
   .dataBox {
     padding: 5px;
     border-radius: 10px;
     margin: auto;
     margin-bottom: 20px;
-    border: 3px solid rgb(72, 72, 211);
     border-radius: 10px;
     .dataRow {
       display: flex;
@@ -43,10 +43,13 @@
   .moreBtn {
     padding: 12px 20px;
     font-weight: 800;
-    background-color: $gradient;
     color: inherit;
     margin-bottom: 20px;
-    border: 2px solid rgb(72, 72, 211);
     border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    @include backgoundColorAnimation();
+    font-size: 20px;
   }
 }

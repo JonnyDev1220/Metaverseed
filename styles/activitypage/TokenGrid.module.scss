@@ -1,0 +1,25 @@
+@import "/styles/variables.scss";
+@import "/styles/mixins.scss";
+
+.gridHeader {
+  color: white;
+  font-weight: 900;
+  font-size: 15px;
+  background: $greyBlack;
+}
+
+.name {
+  margin-right: 10px;
+}
+
+.symbol {
+  color: grey;
+}
+
+.pourcent.positive {
+  color: green;
+}
+
+.pourcent.negative {
+  color: red;
+}

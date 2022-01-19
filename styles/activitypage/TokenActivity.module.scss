@@ -1,4 +1,72 @@
+@import "../variables.scss";
+
 .compContainer {
-  max-width: 1200px;
-  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  .statsDiv {
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+
+    .marketcap {
+      margin-right: 10px;
+      padding: 15px 25px;
+      border-radius: 10px;
+      border: none;
+      background: rgb(22, 22, 22);
+
+      .spanName {
+        color: grey;
+        font-size: 15px;
+      }
+    }
+    .changeGreen {
+      margin-right: 10px;
+      padding: 15px 25px;
+      color: rgb(47, 255, 82);
+      border-radius: 10px;
+      background: rgb(22, 22, 22);
+
+      .spanName {
+        color: grey;
+        font-size: 15px;
+      }
+    }
+    .changeRed {
+      margin-right: 10px;
+      padding: 15px 25px;
+      color: rgb(255, 71, 47);
+      border-radius: 10px;
+      background: rgb(22, 22, 22);
+
+      .spanName {
+        color: grey;
+        font-size: 15px;
+      }
+    }
+    .volume24h {
+      margin-right: 10px;
+      padding: 15px 25px;
+      border-radius: 10px;
+      background: rgb(22, 22, 22);
+
+      .spanName {
+        color: grey;
+        font-size: 15px;
+      }
+    }
+    .globalCap {
+      margin-right: 10px;
+      padding: 15px 25px;
+      border-radius: 10px;
+      border: none;
+      background: rgb(22, 22, 22);
+
+      .spanName {
+        color: grey;
+        font-size: 15px;
+      }
+    }
+  }
 }

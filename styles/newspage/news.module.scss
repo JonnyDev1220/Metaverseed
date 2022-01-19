@@ -1,10 +1,10 @@
 .newsHero {
   height: 10vh;
-  background-color: rgb(88, 88, 252);
-  width: auto;
-  display: flex;
-  align-items: center;
+  width: 100%;
   padding: 20px;
+  h1 {
+    text-align: center;
+  }
 }
 
 .pageContainer {

@@ -23,8 +23,8 @@ const Navbar = () => {
             <a className={styles.link}>News</a>
           </Link>
 
-          <Link href="/activity">
-            <a className={styles.link}>Activity</a>
+          <Link href="/market">
+            <a className={styles.link}>Market</a>
           </Link>
 
           <Link href="/portfolio">
