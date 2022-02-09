@@ -1,8 +1,10 @@
 import Navbar from "../components/Navbar";
+
 const portfolio = () => {
   return (
     <div>
-      <div>Portfolio Tracker</div>
+      <Navbar />
+      <div></div>
     </div>
   );
 };

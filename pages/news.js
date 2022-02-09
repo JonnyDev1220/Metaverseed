@@ -11,7 +11,12 @@ const news = ({ metanews, metaTokens }) => {
   const [tokensArray, settokensArray] = useState([]);
 
   useEffect(() => {
+    metanews.articles.sort(function (a, b) {
+      return new Date(b.publishedAt) - new Date(a.publishedAt);
+    });
+
     setnewsArray(metanews.articles);
+
     settokensArray(metaTokens);
   }, [newsArray, tokensArray]);
 

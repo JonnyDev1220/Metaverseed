@@ -5,8 +5,10 @@ const Hero = () => {
     <div>
       <div className={styles.heroSection}>
         <div className={styles.heroTextBox}>
-          <h1>The Best Data Ressources to Invest into the Metaverse</h1>
-          <p>News Feed - Market Activity - Tutorial - Portfolio Tracking</p>
+          <h1>
+            Data ressources for The <span>Metaverse</span> industry{" "}
+          </h1>
+          <p>News Feed - Market Overview - Ressources - Portfolio Tools</p>
         </div>
       </div>
     </div>

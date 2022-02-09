@@ -1,13 +1,23 @@
 .compContainer {
-  width: 90%;
+  width: 100%;
   margin: auto;
+  text-align: center;
+  border-bottom: 2px solid white;
+  border-top: 2px solid white;
+  padding-bottom: 20px;
+  padding-top: 20px;
   .fullNewsBox {
-    width: 90%;
+    width: 100%;
     display: flex;
     justify-content: space-evenly;
     margin: auto;
     overflow: hidden;
     margin-bottom: 50px;
+    .subtitles {
+      font-size: 20px;
+      color: inherit;
+      text-align: center;
+    }
     .articleDiv {
       width: 40%;
       padding: 0px 10px 0px 10px;
@@ -36,7 +46,12 @@
     }
   }
   button {
-    width: 20%;
-    margin: auto;
+    padding: 10px 20px;
+    background: none;
+    border: 2px solid white;
+    border-radius: 20px;
+    color: white;
+    font-family: inherit;
+    font-size: 22px;
   }
 }

@@ -45,7 +45,7 @@ const TokenGrid = ({ tokensArray }) => {
     },
     {
       field: "price_change_percentage_24h",
-      headerName: "Change (24h) ",
+      headerName: "Change(24h) ",
       headerClassName: styles.gridHeader,
       cellClassName: styles.pourcent,
       cellClassName: (params) =>

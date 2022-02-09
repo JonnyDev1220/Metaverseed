@@ -19,6 +19,10 @@ const Navbar = () => {
             <a className={styles.link}>Home</a>
           </Link>
 
+          <Link href="/about">
+            <a className={styles.link}>About us</a>
+          </Link>
+
           <Link href="/news">
             <a className={styles.link}>News</a>
           </Link>
@@ -27,7 +31,7 @@ const Navbar = () => {
             <a className={styles.link}>Market</a>
           </Link>
 
-          <Link href="/portfolio">
+          <Link href="/ressources">
             <a className={styles.link}>Ressources</a>
           </Link>
           <ThemeChanger />

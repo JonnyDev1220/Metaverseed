@@ -7,22 +7,31 @@ import getMetanews from "../database/getMetaverseNews";
 import SideBar from "../components/SideBar";
 import { useState, useEffect } from "react";
 import { getMetaverseToken } from "../database/getMetaverseToken";
-import setMetanews from "../database/setMetaverseNews";
+import styles from "../styles/homepage/Home.module.scss";
+import HomeNewsCarrousel from "../components/home/HomeNewsCarrousel";
 
 export default function Home({ marketcapStats, metanews, metaTokens }) {
   const [tokensArray, settokensArray] = useState([]);
-  setMetanews();
+
   useEffect(() => {
+    metanews.articles.sort(function (a, b) {
+      return new Date(b.publishedAt) - new Date(a.publishedAt);
+    });
+
     settokensArray(metaTokens);
-  }, [tokensArray]);
+  }, [tokensArray, marketcapStats, metaTokens]);
   return (
     <div>
       <Navbar />
       {/* <TopBarAds /> */}
       <Hero />
-      <MetaMarketCap data={marketcapStats} />
-      <HomeNews newsArray={metanews.articles} />
-      <SideBar metaTokens={tokensArray} />
+      {/* <HomeNews newsArray={metanews.articles} /> */}
+      <div className={styles.pageContainer}>
+        <div className={styles.semiContainer}>
+          <HomeNewsCarrousel newsArray={metanews.articles} />
+        </div>
+        <SideBar metaTokens={tokensArray} />
+      </div>
     </div>
   );
 }

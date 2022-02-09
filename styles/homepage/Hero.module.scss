@@ -1,18 +1,28 @@
+@import "../variables.scss";
+@import "../mixins.scss";
+
 .heroSection {
-  background-color: rgb(88, 88, 252);
   width: auto;
   padding: 20px;
   text-align: center;
-
+  background-image: url("../../assets/meta-grid-floor.gif");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 50vh;
+  margin-bottom: 100px;
   .heroTextBox {
     color: white;
+
     h1 {
-      color: white;
-      font-size: 38px;
-      font-weight: 600;
+      font-size: 50px;
+
+      span {
+      }
     }
+
     p {
-      font-size: 20px;
+      font-size: 25px;
     }
   }
 }

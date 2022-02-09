@@ -9,6 +9,11 @@
     font-size: 72px;
     text-align: center;
   }
+  .subtitle {
+    font-size: 22px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
 
   .btnDiv {
     display: flex;
@@ -22,7 +27,6 @@
       border-radius: 10px;
       cursor: pointer;
       color: inherit;
-
       margin-right: 20px;
     }
     button:focus {

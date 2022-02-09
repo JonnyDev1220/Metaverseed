@@ -1,5 +1,5 @@
 .title {
-  text-align: center;
+  font-size: 30px;
 }
 
 .compContainer {
@@ -10,7 +10,6 @@
     display: flex;
     justify-content: space-between;
     .statsBox {
-      text-align: center;
       width: 200px;
       height: 100px;
       .label {
