@@ -5,6 +5,7 @@ import SideBar from "../components/SideBar";
 import getMetanews from "../database/getMetaverseNews";
 import { useState, useEffect } from "react";
 import { getMetaverseToken } from "../database/getMetaverseToken";
+import TopBarAds from "../components/TopBarAds";
 
 const news = ({ metanews, metaTokens }) => {
   const [newsArray, setnewsArray] = useState([]);
@@ -23,9 +24,10 @@ const news = ({ metanews, metaTokens }) => {
   return (
     <div>
       <Navbar />
-      <div className={styles.newsHero}>
-        <h1>Latest Metaverse News</h1>
-      </div>
+      <TopBarAds />
+      {/* <div className={styles.newsHero}>
+        <h1>Latest Metaverse Focused News</h1>
+      </div> */}
       <div className={styles.pageContainer}>
         <Metanews newsArray={newsArray} />
         <SideBar metaTokens={tokensArray} />

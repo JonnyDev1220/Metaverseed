@@ -3,13 +3,11 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const Top10Token = ({ metaTokens }) => {
-  metaTokens.sort((a, b) => {
-    return b.price_change_percentage_24h - a.price_change_percentage_24h;
-  });
+  useEffect(() => {}, [metaTokens]);
 
   return (
     <div className={styles.top10Container}>
-      <h3>Top 10 Gainers 24h</h3>
+      <h3>Top 10 Token</h3>
       <div className={styles.dataBox}>
         {metaTokens.map((element, index) => {
           if (index < 9) {
@@ -36,10 +34,11 @@ const Top10Token = ({ metaTokens }) => {
           }
         })}
       </div>
-
-      <Link href="/market">
-        <button className={styles.moreBtn}>More ..</button>
-      </Link>
+      <div className={styles.btnDiv}>
+        <Link href="/market">
+          <button className={styles.moreBtn}>More Tokens </button>
+        </Link>
+      </div>
     </div>
   );
 };

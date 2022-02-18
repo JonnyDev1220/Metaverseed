@@ -1,9 +1,9 @@
-import styles from "../styles/TopBarAds.module.scss";
+import styles from "../styles/generalComp/TopBarAds.module.scss";
 
 const TopBarAds = () => {
   return (
     <div className={styles.TopBarAds}>
-      <h2>ADs Here !</h2>
+      <span>Your ADs Here !</span>
     </div>
   );
 };

@@ -3,6 +3,12 @@
 
 .top10Container {
   width: 100%;
+  h3 {
+    font-weight: 200;
+    font-size: 30px;
+    margin: unset;
+    margin-bottom: 10px;
+  }
   .dataBox {
     padding: 5px;
     border-radius: 10px;
@@ -33,23 +39,31 @@
         right: 30%;
       }
       .changeGreen {
-        color: rgb(39, 187, 39);
+        color: rgb(50, 240, 129);
       }
       .changeRed {
-        color: red;
+        color: rgb(245, 86, 86);
       }
     }
   }
-  .moreBtn {
-    padding: 12px 20px;
-    font-weight: 800;
-    color: inherit;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-    @include backgoundColorAnimation();
-    font-size: 20px;
+
+  .btnDiv {
+    text-align: center;
+    .moreBtn {
+      font-family: inherit;
+      padding: 12px 20px;
+      font-weight: 200;
+      color: inherit;
+      margin-bottom: 20px;
+      // border-radius: 5px;
+      cursor: pointer;
+      width: auto;
+      @include neonBorderBox($blue);
+      font-size: 20px;
+    }
+
+    .moreBtn:hover {
+      @include neonBorderBox($pink);
+    }
   }
 }

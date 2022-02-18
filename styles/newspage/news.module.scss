@@ -13,3 +13,10 @@
   display: flex;
   justify-content: space-evenly;
 }
+
+// responsive
+@media only screen and (max-width: 768px) {
+  .pageContainer {
+    display: block;
+  }
+}

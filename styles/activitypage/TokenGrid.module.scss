@@ -10,10 +10,13 @@
 
 .name {
   margin-right: 10px;
+  cursor: pointer;
 }
 
 .symbol {
+  text-decoration: none;
   color: grey;
+  cursor: pointer;
 }
 
 .pourcent.positive {
@@ -22,4 +25,10 @@
 
 .pourcent.negative {
   color: rgb(250, 75, 75);
+}
+
+@media only screen and (max-width: 768px) {
+  .name {
+    display: none;
+  }
 }

@@ -1,13 +1,12 @@
 import { DataGrid } from "@mui/x-data-grid";
-import styles from "../../../styles/activitypage/NFTGrid.module.scss";
+import styles from "../../styles/homepage/HomeNFTGrid.module.scss";
 import { useState, useEffect } from "react";
 import clsx from "clsx";
-import ethIcon from "../../../assets/ethereum-icon.png";
+import ethIcon from "../../assets/ethereum-icon.png";
 import Link from "next/link";
 
-const NFTGrid = ({ nftArray }) => {
+const HomeNFTGrid = ({ nftArray }) => {
   const [nft, setnft] = useState([]);
-  console.log(nftArray);
 
   const rows = nft;
 
@@ -15,11 +14,9 @@ const NFTGrid = ({ nftArray }) => {
     {
       field: "name",
       headerName: "Collection Name",
-      width: 10,
       headerClassName: styles.gridHeader,
       flex: 2,
       renderCell: (element) => {
-        console.log(element);
         return (
           <>
             <div className={styles.img}>
@@ -30,9 +27,7 @@ const NFTGrid = ({ nftArray }) => {
                 height="25"
               />
             </div>
-            <Link href={`/market/nfts/${element.id}`}>
-              <div className={styles.name}>{element.value}</div>
-            </Link>
+            <div className={styles.name}>{element.value}</div>
           </>
         );
       },
@@ -75,23 +70,6 @@ const NFTGrid = ({ nftArray }) => {
       },
     },
     {
-      field: "seven_day_change",
-      headerName: "Change(7d)",
-      headerClassName: styles.gridHeader,
-      cellClassName: styles.pourcent,
-      cellClassName: (params) =>
-        clsx(styles.pourcent, {
-          [styles.negative]:
-            params.row.stats.stats.seven_day_change.toFixed(2) < 0,
-          [styles.positive]:
-            params.row.stats.stats.seven_day_change.toFixed(2) > 0,
-        }),
-      flex: 1,
-      renderCell: (element) => {
-        return <>{element.row.stats.stats.seven_day_change.toFixed(2)} %</>;
-      },
-    },
-    {
       field: "floor_price",
       headerName: "Floor Price",
       headerClassName: styles.gridHeader,
@@ -112,48 +90,17 @@ const NFTGrid = ({ nftArray }) => {
         );
       },
     },
-    {
-      field: "num_owners",
-      headerName: "Owners",
-      headerClassName: styles.gridHeader,
-      flex: 1,
-      renderCell: (element) => {
-        return (
-          <>
-            {element.row.stats.stats.num_owners !== null
-              ? element.row.stats.stats.num_owners
-              : "--"}
-          </>
-        );
-      },
-    },
-    {
-      field: "count",
-      headerName: "Item",
-      headerClassName: styles.gridHeader,
-      flex: 1,
-      renderCell: (element) => {
-        return (
-          <>
-            {element.row.stats.stats.count !== null
-              ? element.row.stats.stats.count
-              : "--"}
-          </>
-        );
-      },
-    },
   ];
 
   useEffect(() => {
-    nftArray.map((element) => {
-      element.id = element.slug;
-    });
     setnft(nftArray);
   }, [nftArray]);
 
   return (
-    <div>
-      {" "}
+    <div className={styles.compContainer}>
+      <div className={styles.headComp}>
+        <h2>Metaverse Top 10 NFT Collections</h2>
+      </div>
       <DataGrid
         sx={{
           fontFamily: '"Kanit", sans-serif;',
@@ -166,8 +113,14 @@ const NFTGrid = ({ nftArray }) => {
         autoHeight={true}
         hideFooter={true}
       />
+
+      <div className={styles.btnDiv}>
+        <Link href="/market">
+          <button className={styles.moreBtn}>More Collections </button>
+        </Link>
+      </div>
     </div>
   );
 };
 
-export default NFTGrid;
+export default HomeNFTGrid;

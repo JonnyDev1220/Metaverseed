@@ -5,7 +5,7 @@ import moment from "moment";
 const Metanews = ({ newsArray }) => {
   return (
     <div className={styles.compContainer}>
-      <h1> Latest News</h1>
+      <h2> Latest News</h2>
       <div className={styles.newsContainer}>
         {newsArray.map((article, index) => {
           if (article.urlToImage == null || undefined) {

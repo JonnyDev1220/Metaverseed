@@ -1,0 +1,68 @@
+@import "../variables.scss";
+@import "../mixins.scss";
+
+.pageContainer {
+  max-width: 1200px;
+  margin: auto;
+  .bannerDiv {
+    // overflow: hidden;
+    height: 30vh;
+    background-position: 50%;
+    border-bottom: 2px solid $pink;
+  }
+
+  .headerComp {
+    max-width: 1200px;
+    margin: auto;
+    margin-top: -50px;
+    padding: 20px;
+
+    .imgDiv {
+      width: 100%;
+      .collectionImg {
+        width: 50px;
+        border: 2px solid black;
+        border-radius: 50%;
+      }
+    }
+
+    .compContainer {
+      display: flex;
+      justify-content: space-between;
+      h2 {
+        margin: unset;
+        font-size: 30px;
+        font-weight: 200;
+      }
+
+      .statsDiv {
+        display: flex;
+        justify-content: space-between;
+        width: 50%;
+        .stats {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          padding: 5px;
+          font-size: 20px;
+          width: auto;
+
+          .logoPrice {
+            display: flex;
+            font-size: 20px;
+            img {
+              width: 15px;
+              margin-right: 6px;
+            }
+          }
+        }
+      }
+    }
+
+    p {
+      color: grey;
+      font-size: 15px;
+    }
+  }
+}

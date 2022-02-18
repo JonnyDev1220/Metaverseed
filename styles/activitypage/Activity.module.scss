@@ -4,7 +4,7 @@
 .pageContainer {
   max-width: 1200px;
   margin: auto;
-
+  margin-top: 100px;
   h1 {
     font-size: 72px;
     text-align: center;
@@ -28,9 +28,10 @@
       cursor: pointer;
       color: inherit;
       margin-right: 20px;
+      @include neonBorderBox($blue);
     }
-    button:focus {
-      @include backgoundColorAnimation();
+    button:hover {
+      @include neonBoxHover($pink);
     }
   }
 }

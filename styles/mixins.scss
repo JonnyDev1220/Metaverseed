@@ -1,15 +1,18 @@
 @import "../styles/variables.scss";
 
-@mixin neonPink() {
-  color: #fff;
-  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px $pink, 0 0 20px $pink,
-    0 0 25px $pink, 0 0 30px $pink;
-  font-weight: 300;
+@mixin neonBorderBox($color) {
+  background: none;
+  border: 2px solid $color;
+  box-shadow: inset 0px 0px 4px 0.5px $color, 0px 0px 5px 0.5px $color;
+  -webkit-box-shadow: inset 0px 0px 4px 0.5px $color, 0px 0px 5px 0.5px $color;
+  -moz-box-shadow: inset 0px 0px 4px 0.5px $color, 0px 0px 5px 0.5px $color;
 }
-@mixin neonBlue() {
-  color: #fff;
-  text-shadow: 0 0 5px #fff, 0 0 15px $blue, 0 0 20px $blue, 0 0 25px $blue;
-  font-weight: 300;
+
+@mixin neonBoxHover($color) {
+  border-color: $color;
+  box-shadow: inset 0px 0px 4px 0.5px $color, 0px 0px 5px 0.5px $color;
+  -webkit-box-shadow: inset 0px 0px 4px 0.5px $color, 0px 0px 5px 0.5px $color;
+  -moz-box-shadow: inset 0px 0px 4px 0.5px $color, 0px 0px 5px 0.5px $color;
 }
 
 @mixin centerContent() {

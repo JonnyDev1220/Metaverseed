@@ -4,6 +4,8 @@
 body {
   font-family: "Kanit", sans-serif;
   letter-spacing: 0.3px;
+  background-color: $bg-dark-mode;
+  color: $white-text;
 }
 
 body.dark-mode {

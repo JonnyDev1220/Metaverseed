@@ -76,3 +76,37 @@
     }
   }
 }
+
+@media only screen and (max-width: 768px) {
+  .compContainer {
+    .statsDiv {
+      overflow: scroll;
+      font-size: 14px;
+      .marketcap {
+        font-size: 14px;
+        .spanName {
+          font-size: 10px;
+        }
+      }
+      .changeGreen {
+        .spanName {
+        }
+      }
+      .changeRed {
+        .spanName {
+        }
+      }
+      .volume24h {
+        .spanName {
+        }
+      }
+      .globalCap {
+        .spanName {
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 425px) {
+}

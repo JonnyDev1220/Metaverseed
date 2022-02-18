@@ -6,9 +6,9 @@ const Hero = () => {
       <div className={styles.heroSection}>
         <div className={styles.heroTextBox}>
           <h1>
-            Data ressources for The <span>Metaverse</span> industry{" "}
+            <span>Metaverse</span> Data Aggregator{" "}
           </h1>
-          <p>News Feed - Market Overview - Ressources - Portfolio Tools</p>
+          <p>News Feed - Market Overview - Ressources </p>
         </div>
       </div>
     </div>

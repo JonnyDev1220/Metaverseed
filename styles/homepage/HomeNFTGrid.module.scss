@@ -1,0 +1,68 @@
+@import "/styles/variables.scss";
+@import "/styles/mixins.scss";
+
+.compContainer {
+  .headComp {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    h2 {
+      font-weight: 200;
+      font-size: 30px;
+    }
+  }
+  .btnDiv {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 30px;
+    .moreBtn {
+      border: 1px solid white;
+      padding: 5px 10px;
+      color: white;
+      text-align: center;
+      font-family: inherit;
+      font-size: 18px;
+      cursor: pointer;
+      @include neonBorderBox($blue);
+      font-weight: 100;
+      width: auto;
+    }
+
+    .moreBtn:hover {
+      @include neonBorderBox($pink);
+      color: white;
+    }
+  }
+
+  .gridHeader {
+    color: white;
+    font-weight: 900;
+    font-size: 15px;
+    background: $greyBlack;
+  }
+
+  .eth_icon {
+    margin-right: 10px;
+  }
+
+  .name {
+    margin-right: 10px;
+  }
+
+  .img {
+    margin-right: 10px;
+  }
+
+  .symbol {
+    color: grey;
+  }
+
+  .pourcent.positive {
+    color: rgb(50, 240, 129);
+  }
+
+  .pourcent.negative {
+    color: rgb(245, 86, 86);
+  }
+}

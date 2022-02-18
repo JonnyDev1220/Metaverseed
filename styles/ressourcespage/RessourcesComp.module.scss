@@ -1,3 +1,17 @@
 .compContainer {
   width: 70%;
+  .ressourcesGrid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    // grid-template-rows: ;
+    .itemBox {
+      img {
+        width: 95%;
+      }
+      h2 {
+        margin: unset;
+      }
+    }
+  }
 }

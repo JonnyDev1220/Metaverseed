@@ -4,6 +4,15 @@
   display: flex;
   justify-content: space-evenly;
   .semiContainer {
-    width: 70%;
+    width: 68%;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .pageContainer {
+    display: block;
+    .semiContainer {
+      width: 100%;
+    }
   }
 }

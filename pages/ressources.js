@@ -15,17 +15,15 @@ const ressources = ({ metaTokens }) => {
   return (
     <div>
       <Navbar />
-      <h1>Ressources</h1>
+      {/* <h1>Ressources</h1>
       <p></p>
       <div className={styles.pageContainer}>
         <RessourcesComp />
         <SideBar metaTokens={tokensArray} />
-      </div>
+      </div> */}
     </div>
   );
 };
-
-export default ressources;
 
 export const getServerSideProps = async () => {
   const metaTokens = await getMetaverseToken();

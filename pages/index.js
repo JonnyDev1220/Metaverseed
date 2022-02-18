@@ -1,19 +1,33 @@
 import * as React from "react";
 import Navbar from "../components/Navbar";
 import Hero from "../components/home/Hero";
-import MetaMarketCap from "../components/home/MetaMarketCap";
-import HomeNews from "../components/home/HomeNews";
 import getMetanews from "../database/getMetaverseNews";
 import SideBar from "../components/SideBar";
 import { useState, useEffect } from "react";
 import { getMetaverseToken } from "../database/getMetaverseToken";
 import styles from "../styles/homepage/Home.module.scss";
 import HomeNewsCarrousel from "../components/home/HomeNewsCarrousel";
+import TopBarAds from "../components/TopBarAds";
+import getNftStats from "../database/getNFTStats";
+import HomeNFTGrid from "../components/home/HomeNFTGrid";
 
-export default function Home({ marketcapStats, metanews, metaTokens }) {
+export default function Home({
+  marketcapStats,
+  metanews,
+  metaTokens,
+  metaNFT,
+}) {
   const [tokensArray, settokensArray] = useState([]);
 
+  const topFiveNFT = [];
+
   useEffect(() => {
+    for (let i = 0; i < 10; i++) {
+      const element = metaNFT.nftStats[i];
+      element.id = element.slug;
+      topFiveNFT.push(element);
+    }
+
     metanews.articles.sort(function (a, b) {
       return new Date(b.publishedAt) - new Date(a.publishedAt);
     });
@@ -23,12 +37,12 @@ export default function Home({ marketcapStats, metanews, metaTokens }) {
   return (
     <div>
       <Navbar />
-      {/* <TopBarAds /> */}
       <Hero />
-      {/* <HomeNews newsArray={metanews.articles} /> */}
+      <TopBarAds />
       <div className={styles.pageContainer}>
         <div className={styles.semiContainer}>
           <HomeNewsCarrousel newsArray={metanews.articles} />
+          <HomeNFTGrid nftArray={topFiveNFT} />
         </div>
         <SideBar metaTokens={tokensArray} />
       </div>
@@ -41,12 +55,14 @@ export const getServerSideProps = async () => {
   const marketcapStats = await res.json();
   const metanews = await getMetanews();
   const metaTokens = await getMetaverseToken();
+  const metaNFT = await getNftStats();
 
   return {
     props: {
       marketcapStats: marketcapStats,
       metanews: metanews,
       metaTokens: metaTokens,
+      metaNFT: metaNFT,
     },
   };
 };

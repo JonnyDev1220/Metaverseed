@@ -3,6 +3,8 @@ import styles from "../../../styles/activitypage/TokenGrid.module.scss";
 import { useState, useEffect } from "react";
 import { Avatar } from "@mui/material";
 import clsx from "clsx";
+import { getServerSideProps } from "../../../pages/market";
+import Link from "next/link";
 
 const TokenGrid = ({ tokensArray }) => {
   const [tokens, settokens] = useState([]);
@@ -16,9 +18,9 @@ const TokenGrid = ({ tokensArray }) => {
   const columns = [
     {
       field: "name",
+      width: 200,
       headerName: "Name",
       headerClassName: styles.gridHeader,
-      flex: 2,
       renderCell: (element) => {
         return (
           <>
@@ -26,10 +28,15 @@ const TokenGrid = ({ tokensArray }) => {
               sx={{ width: "20px", height: "20px", marginRight: "10px" }}
               src={element.row.image}
             />
-            <div className={styles.name}>{element.value}</div>
-            <span className={styles.symbol}>
-              {element.row.symbol.toUpperCase()}
-            </span>
+            <Link href={`/market/${element.id}`}>
+              <span className={styles.name}>{element.row.name}</span>
+            </Link>
+
+            <Link href={`/market/${element.id}`}>
+              <span href="" className={styles.symbol}>
+                {element.row.symbol.toUpperCase()}
+              </span>
+            </Link>
           </>
         );
       },
@@ -55,12 +62,20 @@ const TokenGrid = ({ tokensArray }) => {
         }),
       flex: 1,
       renderCell: (element) => {
-        return <>{element.row.price_change_percentage_24h.toFixed(2)}%</>;
+        return (
+          <>
+            {element.row.price_change_percentage_24h == null
+              ? null
+              : element.row.price_change_percentage_24h.toFixed(2)}
+            %
+          </>
+        );
       },
     },
     {
       field: "total_volume",
       headerName: "Total Volume",
+      width: 200,
       headerClassName: styles.gridHeader,
       flex: 1,
       renderCell: (element) => {
@@ -86,6 +101,9 @@ const TokenGrid = ({ tokensArray }) => {
       },
     },
   ];
+  const handleClick = () => {
+    console.log(hello);
+  };
 
   useEffect(() => {
     settokens(tokensArray);
@@ -96,13 +114,16 @@ const TokenGrid = ({ tokensArray }) => {
       style={{
         width: "100%",
         color: "inherit",
+        overflow: "scroll",
       }}
     >
       <DataGrid
+        SelectionUnit="FullRow"
         sx={{
           fontFamily: '"Kanit", sans-serif;',
           letterSpacing: "0.3px",
           color: "inherit",
+          width: "1200px",
         }}
         rows={rows}
         columns={columns}
