@@ -104,12 +104,14 @@ const StockGrid = ({ stockArray }) => {
           fontFamily: '"Kanit", sans-serif;',
           letterSpacing: "0.3px",
           color: "inherit",
+          border: "none",
         }}
         rows={rows}
         columns={columns}
         disableColumnMenu={true}
         autoHeight={true}
         hideFooter={true}
+        rowHeight={70}
       />
     </div>
   );

@@ -25,12 +25,4 @@ const ressources = ({ metaTokens }) => {
   );
 };
 
-export const getServerSideProps = async () => {
-  const metaTokens = await getMetaverseToken();
-
-  return {
-    props: {
-      metaTokens: metaTokens,
-    },
-  };
-};
+export const getServerSideProps = async () => {};

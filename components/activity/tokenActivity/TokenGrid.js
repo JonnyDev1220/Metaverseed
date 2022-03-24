@@ -18,7 +18,7 @@ const TokenGrid = ({ tokensArray }) => {
   const columns = [
     {
       field: "name",
-      width: 200,
+      width: 300,
       headerName: "Name",
       headerClassName: styles.gridHeader,
       renderCell: (element) => {
@@ -124,12 +124,15 @@ const TokenGrid = ({ tokensArray }) => {
           letterSpacing: "0.3px",
           color: "inherit",
           width: "1200px",
+          border: "none",
+          fontSize: "17px",
         }}
         rows={rows}
         columns={columns}
         disableColumnMenu={true}
         autoHeight={true}
         hideFooter={true}
+        rowHeight={70}
       />
     </div>
   );

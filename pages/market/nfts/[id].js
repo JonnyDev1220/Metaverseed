@@ -1,11 +1,10 @@
 import getNftStats from "../../../database/getNFTStats";
 import styles from "../../../styles/activitypage/CollectionDetails.module.scss";
 import Navbar from "../../../components/Navbar";
-import Image from "next/image";
 import ethIcon from "../../../assets/ethereum-icon.png";
+import NFTTransactions from "../../../components/activity/nftActivity/NFTTransactions";
 
 const collectionDetails = ({ collection }) => {
-  console.log(collection);
   return (
     <>
       <Navbar />
@@ -63,6 +62,12 @@ const collectionDetails = ({ collection }) => {
               </div>
               <div className={styles.stats}>
                 <div className={styles.logoPrice}>
+                  {collection.stats.total_supply}
+                </div>
+                <span>Item</span>
+              </div>
+              <div className={styles.stats}>
+                <div className={styles.logoPrice}>
                   {collection.stats.total_sales}
                 </div>
                 <span>Sales</span>
@@ -72,6 +77,10 @@ const collectionDetails = ({ collection }) => {
 
           <p>{collection.description}</p>
         </div>
+
+        <NFTTransactions
+          collectionAssets={collection.primary_asset_contracts}
+        />
       </div>
     </>
   );

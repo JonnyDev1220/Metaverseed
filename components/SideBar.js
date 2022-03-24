@@ -1,7 +1,6 @@
 import styles from "../styles/generalComp/SideBar.module.scss";
 import Top10Token from "./Top10Token";
 import UDBanner from "../assets/UD-banner.png";
-import SideBarAds from "./SideAds";
 import SideAds from "./SideAds";
 
 const SideBar = ({ metaTokens }) => {

@@ -1,0 +1,23 @@
+@import "../variables.scss";
+@import "../mixins.scss";
+
+.pageContainer {
+  margin: auto;
+  padding: 30px;
+  max-width: 1200px;
+
+  .link {
+    font-size: 15px;
+    text-decoration: none;
+    @include buttonStyle();
+    color: inherit;
+    padding: 5px 10px;
+  }
+  .link:hover {
+    @include buttonStyleHover();
+  }
+  .chartBox {
+    max-width: 1200px;
+    height: 50vh;
+  }
+}

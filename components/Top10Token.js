@@ -1,10 +1,7 @@
 import styles from "../styles/generalComp/Top10Token.module.scss";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 
 const Top10Token = ({ metaTokens }) => {
-  useEffect(() => {}, [metaTokens]);
-
   return (
     <div className={styles.top10Container}>
       <h3>Top 10 Token</h3>
@@ -44,3 +41,5 @@ const Top10Token = ({ metaTokens }) => {
 };
 
 export default Top10Token;
+
+export const getServerSideProps = (context) => {};

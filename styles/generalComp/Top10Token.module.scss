@@ -4,8 +4,9 @@
 .top10Container {
   width: 100%;
   h3 {
-    font-weight: 200;
-    font-size: 30px;
+    font-size: 35px;
+    font-weight: 400;
+    color: $blue;
     margin: unset;
     margin-bottom: 10px;
   }
@@ -58,12 +59,14 @@
       // border-radius: 5px;
       cursor: pointer;
       width: auto;
-      @include neonBorderBox($blue);
+      border: none;
+      @include buttonStyle();
+
       font-size: 20px;
     }
 
     .moreBtn:hover {
-      @include neonBorderBox($pink);
+      @include buttonStyleHover();
     }
   }
 }

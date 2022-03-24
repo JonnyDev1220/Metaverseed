@@ -1,6 +1,12 @@
 @import "../variables.scss";
+@import "../mixins.scss";
+
 .compContainer {
-  width: 70%;
+  width: 65%;
+  @include boxStyle();
+  border-radius: 20px;
+  padding: 10px 20px;
+
   h2 {
     font-size: 30px;
     font-weight: 200;

@@ -1,11 +1,10 @@
-@import "../styles/variables.scss";
-
 @mixin neonBorderBox($color) {
   background: none;
   border: 2px solid $color;
   box-shadow: inset 0px 0px 4px 0.5px $color, 0px 0px 5px 0.5px $color;
   -webkit-box-shadow: inset 0px 0px 4px 0.5px $color, 0px 0px 5px 0.5px $color;
   -moz-box-shadow: inset 0px 0px 4px 0.5px $color, 0px 0px 5px 0.5px $color;
+  border-radius: 10px;
 }
 
 @mixin neonBoxHover($color) {
@@ -13,6 +12,27 @@
   box-shadow: inset 0px 0px 4px 0.5px $color, 0px 0px 5px 0.5px $color;
   -webkit-box-shadow: inset 0px 0px 4px 0.5px $color, 0px 0px 5px 0.5px $color;
   -moz-box-shadow: inset 0px 0px 4px 0.5px $color, 0px 0px 5px 0.5px $color;
+  border-radius: 20px;
+}
+
+@mixin boxStyle() {
+  border-radius: 40px;
+  background: #292929;
+  box-shadow: 12px 12px 47px #1f1f1f, -12px -12px 47px #333333;
+}
+
+@mixin buttonStyle() {
+  font-weight: 400;
+  border-radius: 10px;
+  background: linear-gradient(225deg, #2c2c2c, #252525);
+  box-shadow: -6px 6px 11px #1f1f1f, 6px -6px 11px #333333;
+}
+
+@mixin buttonStyleHover() {
+  font-weight: 400;
+  border-radius: 10px;
+  background: linear-gradient(225deg, #252525, #2c2c2c);
+  box-shadow: -6px 6px 11px #1f1f1f, 6px -6px 11px #333333;
 }
 
 @mixin centerContent() {
@@ -66,29 +86,30 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-    25% {
+    100% {
       background: rgb(0, 204, 194);
 
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-    50% {
-      background: #aaf683;
+  }
+}
 
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    75% {
-      background: #ffd97d;
+@mixin boxShadowAnim($color1, $color2) {
+  animation-name: boxShadowPalette;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
 
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+  @keyframes boxShadowPalette {
+    0% {
+      box-shadow: 0px 0px 5px -0.5px $color1;
+      border: 1px $color1 solid;
     }
     100% {
-      background: #ff9b85;
-
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      box-shadow: 0px 0px 5px -0.5px $color2;
+      border: 1px $color2 solid;
     }
   }
 }

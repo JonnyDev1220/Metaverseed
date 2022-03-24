@@ -1,0 +1,49 @@
+@import "../variables.scss";
+@import "../mixins.scss";
+
+.statsDiv {
+  margin-top: 40px;
+  display: flex;
+  width: 100%;
+  @include boxStyle();
+  padding: 10px 20px;
+  margin-bottom: 30px;
+
+  .firstDiv {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: auto;
+    margin-right: 30px;
+
+    img {
+      width: 30px;
+      height: 30px;
+      margin-right: 10px;
+    }
+
+    span {
+      margin-right: 10px;
+    }
+
+    .symbol {
+      color: grey;
+    }
+  }
+
+  .secondDiv {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    font-weight: 300;
+    font-size: 10px;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .statsDiv {
+    .secondDiv {
+      display: none;
+    }
+  }
+}

@@ -4,11 +4,11 @@
 body {
   font-family: "Kanit", sans-serif;
   letter-spacing: 0.3px;
-  background-color: $bg-dark-mode;
+  background-color: #292929;
+  background-clip: border-box;
   color: $white-text;
 }
 
 body.dark-mode {
-  background-color: $bg-dark-mode;
   color: $white-text;
 }

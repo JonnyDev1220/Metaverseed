@@ -3,34 +3,25 @@ import styles from "../styles/newspage/news.module.scss";
 import Metanews from "../components/news/Metanews";
 import SideBar from "../components/SideBar";
 import getMetanews from "../database/getMetaverseNews";
-import { useState, useEffect } from "react";
 import { getMetaverseToken } from "../database/getMetaverseToken";
 import TopBarAds from "../components/TopBarAds";
 
 const news = ({ metanews, metaTokens }) => {
-  const [newsArray, setnewsArray] = useState([]);
-  const [tokensArray, settokensArray] = useState([]);
-
-  useEffect(() => {
-    metanews.articles.sort(function (a, b) {
-      return new Date(b.publishedAt) - new Date(a.publishedAt);
-    });
-
-    setnewsArray(metanews.articles);
-
-    settokensArray(metaTokens);
-  }, [newsArray, tokensArray]);
+  //Metanews filter by last day
+  metanews.articles.sort(function (a, b) {
+    return new Date(b.publishedAt) - new Date(a.publishedAt);
+  });
 
   return (
     <div>
       <Navbar />
-      <TopBarAds />
+      {/* <TopBarAds /> */}
       {/* <div className={styles.newsHero}>
         <h1>Latest Metaverse Focused News</h1>
       </div> */}
       <div className={styles.pageContainer}>
-        <Metanews newsArray={newsArray} />
-        <SideBar metaTokens={tokensArray} />
+        <Metanews newsArray={metanews.articles} />
+        <SideBar metaTokens={metaTokens} />
       </div>
     </div>
   );

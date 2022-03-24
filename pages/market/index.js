@@ -8,14 +8,6 @@ import TokenActivity from "../../components/activity/tokenActivity/TokenActivity
 import Navbar from "../../components/Navbar";
 
 const TokenMarket = ({ metaTokens, marketcapStats, marketcapGlobal }) => {
-  const [tokensArray, settokensArray] = useState([]);
-  const [globalCap, setglobalCap] = useState("");
-
-  useEffect(() => {
-    setglobalCap(marketcapGlobal.data.total_market_cap.usd);
-    settokensArray(metaTokens);
-  }, [metaTokens, marketcapGlobal, marketcapStats]);
-
   return (
     <>
       <Navbar />
@@ -35,10 +27,10 @@ const TokenMarket = ({ metaTokens, marketcapStats, marketcapGlobal }) => {
         </div>
         <TokenActivity
           marketcapStats={marketcapStats}
-          marketcapGlobal={globalCap}
+          marketcapGlobal={marketcapGlobal.data.total_market_cap.usd}
         />
 
-        <TokenGrid tokensArray={tokensArray} />
+        <TokenGrid tokensArray={metaTokens} />
       </div>
     </>
   );

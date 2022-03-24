@@ -2,14 +2,19 @@
 @import "/styles/mixins.scss";
 
 .compContainer {
+  @include boxStyle();
+  border-radius: 20px;
+  padding: 10px 20px;
+
   .headComp {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
     h2 {
-      font-weight: 200;
-      font-size: 30px;
+      color: $blue;
+      font-weight: 400;
+      font-size: 40px;
     }
   }
   .btnDiv {
@@ -36,10 +41,9 @@
   }
 
   .gridHeader {
-    color: white;
+    color: $pink;
     font-weight: 900;
-    font-size: 15px;
-    background: $greyBlack;
+    font-size: 17px;
   }
 
   .eth_icon {

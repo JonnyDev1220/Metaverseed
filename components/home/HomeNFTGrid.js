@@ -6,9 +6,7 @@ import ethIcon from "../../assets/ethereum-icon.png";
 import Link from "next/link";
 
 const HomeNFTGrid = ({ nftArray }) => {
-  const [nft, setnft] = useState([]);
-
-  const rows = nft;
+  const rows = nftArray;
 
   const columns = [
     {
@@ -92,25 +90,25 @@ const HomeNFTGrid = ({ nftArray }) => {
     },
   ];
 
-  useEffect(() => {
-    setnft(nftArray);
-  }, [nftArray]);
-
   return (
     <div className={styles.compContainer}>
       <div className={styles.headComp}>
-        <h2>Metaverse Top 10 NFT Collections</h2>
+        <h2>Top 10 NFT Collections</h2>
       </div>
+      <p>this list is provided by Opensea</p>
       <DataGrid
         sx={{
           fontFamily: '"Kanit", sans-serif;',
           letterSpacing: "0.3px",
           color: "inherit",
+          fontSize: "16px",
+          border: "none",
         }}
         rows={rows}
         columns={columns}
         disableColumnMenu={true}
         autoHeight={true}
+        rowHeight={70}
         hideFooter={true}
       />
 

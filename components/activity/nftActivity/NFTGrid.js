@@ -1,15 +1,14 @@
 import { DataGrid } from "@mui/x-data-grid";
 import styles from "../../../styles/activitypage/NFTGrid.module.scss";
-import { useState, useEffect } from "react";
 import clsx from "clsx";
 import ethIcon from "../../../assets/ethereum-icon.png";
 import Link from "next/link";
 
 const NFTGrid = ({ nftArray }) => {
-  const [nft, setnft] = useState([]);
-  console.log(nftArray);
-
-  const rows = nft;
+  nftArray.map((element) => {
+    element.id = element.slug;
+  });
+  const rows = nftArray;
 
   const columns = [
     {
@@ -19,7 +18,6 @@ const NFTGrid = ({ nftArray }) => {
       headerClassName: styles.gridHeader,
       flex: 2,
       renderCell: (element) => {
-        console.log(element);
         return (
           <>
             <div className={styles.img}>
@@ -144,13 +142,6 @@ const NFTGrid = ({ nftArray }) => {
     },
   ];
 
-  useEffect(() => {
-    nftArray.map((element) => {
-      element.id = element.slug;
-    });
-    setnft(nftArray);
-  }, [nftArray]);
-
   return (
     <div>
       {" "}
@@ -159,12 +150,14 @@ const NFTGrid = ({ nftArray }) => {
           fontFamily: '"Kanit", sans-serif;',
           letterSpacing: "0.3px",
           color: "inherit",
+          border: "none",
         }}
         rows={rows}
         columns={columns}
         disableColumnMenu={true}
         autoHeight={true}
         hideFooter={true}
+        rowHeight={70}
       />
     </div>
   );

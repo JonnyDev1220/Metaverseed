@@ -1,15 +1,16 @@
+@import "../variables.scss";
+@import "../mixins.scss";
+
 .sideBarContainer {
   width: 25%;
   height: 100%;
-  padding: 10px;
+  padding: 15px;
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
-
-  h2 {
-    font-size: 35px;
-  }
+  @include boxStyle();
+  border-radius: 15px;
 
   .tokenPriceBox {
     width: auto;
